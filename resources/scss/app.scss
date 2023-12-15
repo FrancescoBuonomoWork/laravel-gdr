@@ -17,17 +17,19 @@ a{
 }
 
 body {
-    background-color: #ffcc00; /* Giallo acceso */
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Un carattere divertente */
+    background-color: #0c0c0c; /* Nero scuro */
+    font-family: 'Roboto', sans-serif; /* Carattere moderno */
+    color: #ffffff; /* Testo bianco */
 }
 
 .container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #ff99cc; /* Rosa acceso */
-    border: 5px dashed #33ccff; /* Bordo azzurro con linee tratte */
-    border-radius: 20px;
+    background-color: #1a1a1a; /* Nero medio scuro */
+    border: 2px solid #333333; /* Bordo grigio scuro */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Ombra sottile bianca */
 }
 
 .row {
@@ -37,32 +39,36 @@ body {
 }
 
 .character-card {
-    background-color: #99ff99; /* Verde acceso */
-    border: 2px solid #ff3300; /* Rosso acceso */
+    background-color: #262626; /* Nero medio */
+    border: 2px solid #444444; /* Bordo grigio */
     border-radius: 10px;
     margin: 20px;
     padding: 15px;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.05);
+    }
 
     p {
         margin: 0;
         padding: 8px;
         font-size: 1.2em;
-        color: #6600cc; /* Viola acceso */
 
         &:first-child {
             font-weight: bold;
             font-size: 1.5em;
-            color: #ff3300; /* Rosso acceso */
+            color: #ffcc00; /* Giallo acceso */
         }
 
         &.bio {
             font-style: italic;
-            color: #0066cc; /* Blu acceso */
+            color: #999999; /* Grigio medio */
         }
 
         &.attribute {
             font-weight: bold;
-            color: #990000; /* Rosso scuro */
+            color: #66ccff; /* Azzurro acceso */
         }
     }
 }
