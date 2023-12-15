@@ -6,12 +6,12 @@
         <div class="row">
 
             @foreach ($characters as $character)
-                <div>
-                    <p>{{ $character->name}} </p>
-                    <p>{{ $character->bio}} </p>
-                    <p>Difesa: {{ $character->defense}} </p>
-                    <p>Velocità: {{ $character->speed}} </p>
-                    <p>Hp: {{ $character->hp}} </p>
+                <div class="character-card">
+                    <p class="bio">{{ $character->name}} </p>
+                    <p class="attribute">{{ $character->bio}} </p>
+                    <p class="attribute">Difesa: {{ $character->defense}} </p>
+                    <p class="attribute">Velocità: {{ $character->speed}} </p>
+                    <p class="attribute">Hp: {{ $character->hp}} </p>
                 </div>
             @endforeach
         </div>

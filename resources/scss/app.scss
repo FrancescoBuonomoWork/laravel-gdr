@@ -1,6 +1,6 @@
 @use './partials/_header.scss';
 @use './partials/_footer.scss';
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
 *{
     padding: 0;
@@ -14,4 +14,55 @@ ol,ul,menu{
 a{
     color: currentColor;
     text-decoration: none;
+}
+
+body {
+    background-color: #ffcc00; /* Giallo acceso */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Un carattere divertente */
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ff99cc; /* Rosa acceso */
+    border: 5px dashed #33ccff; /* Bordo azzurro con linee tratte */
+    border-radius: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.character-card {
+    background-color: #99ff99; /* Verde acceso */
+    border: 2px solid #ff3300; /* Rosso acceso */
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
+
+    p {
+        margin: 0;
+        padding: 8px;
+        font-size: 1.2em;
+        color: #6600cc; /* Viola acceso */
+
+        &:first-child {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #ff3300; /* Rosso acceso */
+        }
+
+        &.bio {
+            font-style: italic;
+            color: #0066cc; /* Blu acceso */
+        }
+
+        &.attribute {
+            font-weight: bold;
+            color: #990000; /* Rosso scuro */
+        }
+    }
 }
