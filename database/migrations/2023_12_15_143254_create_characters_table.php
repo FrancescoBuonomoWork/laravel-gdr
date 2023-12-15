@@ -18,7 +18,7 @@ return new class extends Migration
             $table->smallInteger('defense');
             $table->smallInteger('speed');
             $table->smallInteger('hp');
-            $table->timestamps();
+            $table->timestamps();   
         });
     }
 

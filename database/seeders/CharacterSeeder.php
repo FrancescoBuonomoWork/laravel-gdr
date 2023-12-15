@@ -7,7 +7,8 @@ use Illuminate\Database\Seeder;
 use App\Models\Character;
 use Faker\Generator as Faker;
 
-class Character extends Seeder
+class CharacterSeeder extends Seeder
+
 {
     /**
      * Run the database seeds.
