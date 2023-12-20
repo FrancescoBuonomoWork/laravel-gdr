@@ -29,13 +29,18 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $new_character = Character::create($data);
+
+        return redirect()->route('characters.show', $new_character->id);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show($id){
+    public function show($id)
+    {
 
         $character = Character::findOrFail($id);
 
