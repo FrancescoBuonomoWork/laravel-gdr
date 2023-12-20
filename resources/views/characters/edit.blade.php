@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="show-container">
-       <form action="" method="POST">
+       <form action="{{ route('characters.update', $character->id)}}" method="POST">
         @method('PUT')
         @csrf
         <div>
