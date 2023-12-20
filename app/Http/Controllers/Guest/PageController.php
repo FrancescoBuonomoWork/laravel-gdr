@@ -14,4 +14,7 @@ class PageController extends Controller
 
         return view('index', compact('characters'));
     }
+
 }
+
+
