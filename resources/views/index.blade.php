@@ -15,7 +15,11 @@
                     <p class="attribute">Hp: {{ $character->hp}} </p>
                     <div>
                         <a href="{{ route('characters.edit', $character->id) }}"><button>Edit</button></a>
-                        <a href=""><button>Delete</button></a>
+                        <form action="{{route('characters.destroy', $character->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button>Delete</button>
+                        </form>
                         
                     </div>
                 </div>
