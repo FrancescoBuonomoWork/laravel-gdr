@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="show-container">
-       <form action="" method="POST">
+       <form action="{{ route('characters.store') }}" method="POST">
         @csrf
         <div>
             <label for="name">Name</label>
@@ -28,6 +28,9 @@
             <label for="hp">hp</label>
             <input id="hp" name="hp" placeholder="hp" type="number">
         </div>
+        <button type="submit">
+            Crea
+        </button>
        </form>
     </div>
 @endsection

@@ -50,17 +50,29 @@ class CharacterController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $character = Character::findOrFail($id);
+        return view('characters.edit', compact('character'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,$id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'bio' => 'required|string|min:5|max:400',
+            'defense' => 'required|integer|between:5,99',
+            'speed' => 'required|integer|between:5,99',
+            'hp' => 'required|integer|between:5,99',
+        ]);
+
+        $character = Character::findOrFail($id);
+        $character->update($validatedData);
+
+        return redirect()->route('characters.show', $id);
     }
 
     /**
