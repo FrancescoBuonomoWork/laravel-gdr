@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Guest\CharacterController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guest\PageController;
 
@@ -19,3 +20,4 @@ use App\Http\Controllers\Guest\PageController;
 Route::get('/',[PageController::class,'index'])->name('homepage');
 
 
+Route::resource('characters', CharacterController::class);
