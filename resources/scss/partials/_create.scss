@@ -64,3 +64,18 @@ form {
     }
   }
 }
+
+button {
+  // width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 4px;
+  background-color: $primary-color;
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
