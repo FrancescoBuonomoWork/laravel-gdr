@@ -13,14 +13,13 @@
                     <p class="attribute">Difesa: {{ $character->defense}} </p>
                     <p class="attribute">Velocità: {{ $character->speed}} </p>
                     <p class="attribute">Hp: {{ $character->hp}} </p>
-                    <div>
+                    <div id="homepage-btn">
                         <a href="{{ route('characters.edit', $character->id) }}"><button>Edit</button></a>
-                        <form action="{{route('characters.destroy', $character->id)}}" method="POST">
+                        <form  action="{{route('characters.destroy', $character->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button>Delete</button>
-                        </form>
-                        
+                        </form> 
                     </div>
                 </div>
             </a>
