@@ -78,8 +78,10 @@ class CharacterController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $character = Character::findOrFail($id);
+        $character->delete();
+        return redirect()->route('homepage');
     }
 }
