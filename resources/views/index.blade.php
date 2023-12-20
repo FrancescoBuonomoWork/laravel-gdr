@@ -18,7 +18,7 @@
                         <form  action="{{route('characters.destroy', $character->id)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button>Delete</button>
+                            <button class="btn-red">Delete</button>
                         </form> 
                     </div>
                 </div>
