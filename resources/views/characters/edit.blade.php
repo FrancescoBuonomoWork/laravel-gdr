@@ -11,6 +11,19 @@
         </div>
 
         <div>
+            <label for="type_id">Class</label>
+            <select id="type_id" name="type_id" placeholder="Class"  type="text">
+
+            <option value="" selected>Select Class</option>
+            
+            @foreach ($types as $type)
+            <option @selected( old( 'type_id', $character->type_id ) == $type->id) value="{{ $type->id }}">{{ $type->name }}</option>
+            @endforeach
+
+            </select>
+        </div>
+
+        <div>
             <label for="bio">bio</label>
             <textarea name="bio" id="bio" cols="30" rows="10">{{ old('bio', $character->bio) }}</textarea>
         </div>
@@ -33,5 +46,18 @@
             Modifica
         </button>
        </form>
+
+       <div>
+        @if ($errors->any())
+     <div >
+         <ul>
+             @foreach ($errors->all() as $error)
+                 <li>{{ $error }}</li>
+             @endforeach
+         </ul>
+     </div>
+     @endif
+     </div>
+
     </div>
 @endsection
