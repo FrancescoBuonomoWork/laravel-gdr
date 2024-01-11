@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Character;
@@ -15,6 +16,9 @@ class CharacterSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
+        $types = Type::all();
+        $typeIds = $types->pluck("id");
+
         for ($i = 0; $i < 10; $i++) {
             $new_character = new Character();
 
@@ -24,7 +28,10 @@ class CharacterSeeder extends Seeder
             $new_character->speed = $faker->numberBetween(5, 99);
             $new_character->hp = $faker->numberBetween(5, 99);
 
+            $new_character->type_id = $faker->randomElement($typeIds);
             $new_character->save();
+
+          
         }
     }
 }
