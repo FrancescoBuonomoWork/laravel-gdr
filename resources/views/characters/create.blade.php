@@ -8,6 +8,18 @@
             <label for="name">Name</label>
             <input id="name" name="name" placeholder="Name" type="text">
         </div>
+        <div>
+            <label for="type_id">Class</label>
+            <select id="type_id" name="type_id" placeholder="Class"  type="text">
+
+            <option value="" selected>Select Class</option>
+            
+            @foreach ($types as $type)
+            <option @selected( old( 'type_id' ) == $type->id) value="{{ $type->id }}">{{ $type->name }}</option>
+            @endforeach
+
+            </select>
+        </div>
 
         <div>
             <label for="bio">bio</label>
@@ -32,5 +44,18 @@
             Crea
         </button>
        </form>
+       <div>
+           @if ($errors->any())
+        <div >
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+        </div>
+
+
     </div>
 @endsection

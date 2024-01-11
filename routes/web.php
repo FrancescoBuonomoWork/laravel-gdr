@@ -30,8 +30,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 // -------
-Route::get('/',[PageController::class,'index'])->name('homepage');
+Route::get('/', [CharacterController::class, 'index'])->name('homepage');
 
 
 Route::resource('characters', CharacterController::class);
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

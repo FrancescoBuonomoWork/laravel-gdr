@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Guest;
 
 use App\Http\Controllers\Controller;
 use App\Models\Character;
+use App\Models\Type;
+use Validator;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -13,7 +15,10 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        //
+        $characters = Character::all();
+        $types = Type::all();
+
+        return view('index', compact('characters', 'types'));
     }
 
     /**
@@ -21,7 +26,8 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        return view('characters.create');
+        $types = Type::all();
+        return view('characters.create', compact('types'));
     }
 
     /**
@@ -29,11 +35,21 @@ class CharacterController extends Controller
      */
     public function store(Request $request)
     {
+
+        $request->validate([
+            'name' => 'required|string|max:255|unique:characters',
+            'bio' => 'required|string|min:10|max:400',
+            'defense' => 'required|numeric|min:5|max:99',
+            'speed' => 'required|numeric|min:5|max:99',
+            'hp' => 'required|numeric|min:5|max:99',
+            'type_id' => 'required|exists:types,id',
+        ]);
+
         $data = $request->all();
 
         $new_character = Character::create($data);
 
-        return redirect()->route('characters.show', $new_character->id);
+        return redirect()->route('characters.show', $new_character);
     }
 
     /**
@@ -53,13 +69,15 @@ class CharacterController extends Controller
     public function edit($id)
     {
         $character = Character::findOrFail($id);
-        return view('characters.edit', compact('character'));
+        $types = Type::all();
+
+        return view('characters.edit', compact('character', 'types'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
