@@ -29,6 +29,11 @@
         </div>
 
         <div>
+            <label for="attack">Attack</label>
+            <input id="attack" name="attack" placeholder="attack" type="number" value="{{ old('attack', $character->attack)}}">
+        </div>
+
+        <div>
             <label for="defense">defense</label>
             <input id="defense" name="defense" placeholder="defense" type="number" value="{{ old('defense', $character->defense)}}">
         </div>
@@ -42,6 +47,12 @@
             <label for="hp">hp</label>
             <input id="hp" name="hp" placeholder="hp" type="number" value="{{ old('hp', $character->hp)}}">
         </div>
+        @foreach ($items as $item)
+        <div class="item_list">
+            <input type="checkbox" name="items[]" id="item-{{ $item->id }}" value="{{ $item->id }}" @checked(in_array($item->id, old('items', $character->items->pluck('id')->all())))>
+            <label for="item-{{ $item->id}}">{{ $item->name}}</label>                       
+        </div>
+            @endforeach
         <button type="submit">
             Modifica
         </button>

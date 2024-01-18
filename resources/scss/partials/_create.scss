@@ -5,11 +5,11 @@ $input-background-color: #444;
 $border-color: #555;
 
 .show-container {
+    padding: 20px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     gap: 20px;
     background-color: $background-color;
 }
