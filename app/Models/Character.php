@@ -12,6 +12,7 @@ class Character extends Model
     protected $fillable = [
         'name',
         'bio',
+        'attack',
         'defense',
         'speed',
         'hp',
@@ -20,5 +21,9 @@ class Character extends Model
 
     public function type(){
         return $this->belongsTo(Type::class);
+    }
+
+    public function items (){
+        return $this->belongsToMany(Item::class);
     }
 }
