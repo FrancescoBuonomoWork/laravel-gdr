@@ -85,6 +85,7 @@ class CharacterController extends Controller
             'defense' => 'required|integer|between:5,99',
             'speed' => 'required|integer|between:5,99',
             'hp' => 'required|integer|between:5,99',
+            'type_id' => 'required|exists:types,id'
         ]);
 
         $character = Character::findOrFail($id);
