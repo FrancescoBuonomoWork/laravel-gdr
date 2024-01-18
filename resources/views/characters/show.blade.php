@@ -14,7 +14,7 @@
                 <p class="attribute">Hp: {{ $character->hp}} </p>
                 @foreach ($character->items as $item)
                 <p class="attribute">Weapon: {{ $item->name }}</p>
-                <ul class="item_list">
+                <ul class="items_list">
                     <li class="bio">Quality: {{ $item->quality }}</li>
                     <li class="bio">Item Level: {{ $item->item_level }}</li>
                     <li class="bio">Damage: {{ $item->damage }}</li>

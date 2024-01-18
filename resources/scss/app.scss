@@ -116,3 +116,10 @@ body {
         flex-shrink: 0;
     }
 }
+
+.items_list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
