@@ -6,11 +6,11 @@
         @csrf
         <div>
             <label for="name">Name</label>
-            <input id="name" name="name" placeholder="Name" type="text">
+            <input id="name" value="{{old('name')}}" name="name" placeholder="Name" type="text">
         </div>
         <div>
             <label for="type_id">Class</label>
-            <select id="type_id" name="type_id" placeholder="Class"  type="text">
+            <select id="type_id"  name="type_id" placeholder="Class"  type="text">
 
             <option value="" selected>Select Class</option>
             
@@ -22,27 +22,27 @@
         </div>
 
         <div>
-            <label for="bio">bio</label>
-            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+            <label for="bio">Bio (min:10)</label>
+            <textarea name="bio" id="bio" cols="30" rows="10">{{ old('bio')}}</textarea>
         </div>
 
         <div>
-            <label for="attack">Attack</label>
-            <input id="attack" name="attack" placeholder="attack" type="number">
+            <label for="attack">Attack (5-99)</label>
+            <input id="attack" value="{{old('attack')}}" name="attack" placeholder="attack" type="number">
         </div>
         <div>
-            <label for="defense">defense</label>
-            <input id="defense" name="defense" placeholder="defense" type="number">
-        </div>
-
-        <div>
-            <label for="speed">speed</label>
-            <input id="speed" name="speed" placeholder="speed" type="number">
+            <label for="defense">Defense (5-99)</label>
+            <input id="defense" value="{{old('defense')}}" name="defense" placeholder="defense" type="number">
         </div>
 
         <div>
-            <label for="hp">hp</label>
-            <input id="hp" name="hp" placeholder="hp" type="number">
+            <label for="speed">Speed (5-99)</label>
+            <input id="speed" value="{{old('speed')}}" name="speed" placeholder="speed" type="number">
+        </div>
+
+        <div>
+            <label for="hp">HP (5-99)</label>
+            <input id="hp" value="{{old('hp')}}" name="hp" placeholder="hp" type="number">
         </div>
         @foreach ($items as $item)
         <div class="item_list">             
