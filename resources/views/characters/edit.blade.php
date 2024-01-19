@@ -24,27 +24,27 @@
         </div>
 
         <div>
-            <label for="bio">bio</label>
+            <label for="bio">Bio (min:10)</label>
             <textarea name="bio" id="bio" cols="30" rows="10">{{ old('bio', $character->bio) }}</textarea>
         </div>
 
         <div>
-            <label for="attack">Attack</label>
+            <label for="attack">Attack (5-99)</label>
             <input id="attack" name="attack" placeholder="attack" type="number" value="{{ old('attack', $character->attack)}}">
         </div>
 
         <div>
-            <label for="defense">defense</label>
+            <label for="defense">Defense (5-99)</label>
             <input id="defense" name="defense" placeholder="defense" type="number" value="{{ old('defense', $character->defense)}}">
         </div>
 
         <div>
-            <label for="speed">speed</label>
+            <label for="speed">Speed (5-99)</label>
             <input id="speed" name="speed" placeholder="speed" type="number" value="{{ old('speed', $character->speed)}}">
         </div>
 
         <div>
-            <label for="hp">hp</label>
+            <label for="hp">HP (5-99)</label>
             <input id="hp" name="hp" placeholder="hp" type="number" value="{{ old('hp', $character->hp)}}">
         </div>
         @foreach ($items as $item)
